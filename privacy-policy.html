@@ -3,51 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Chess Helper for Lichess</title>
+  <title>Политика конфиденциальности — AlexChessPro</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
-    h1 { color: #1a1a2e; }
-    h2 { color: #333; margin-top: 32px; }
-    p { margin-bottom: 16px; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #1a1a2e;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 32px;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul {
+      margin-bottom: 18px;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Privacy Policy — Chess Helper for Lichess</h1>
-  <p><em>Last updated: April 2026</em></p>
 
-  <h2>1. Data We Collect</h2>
-  <p>Chess Helper for Lichess does <strong>not</strong> collect, store, or transmit any personally identifiable information. We do not collect your name, email address, location, or any other personal data.</p>
+  <h1>Политика конфиденциальности — AlexChessPro</h1>
 
-  <h2>2. Local Storage</h2>
-  <p>The extension stores the following data <strong>locally on your device</strong> using Chrome's built-in storage API:</p>
+  <p><em>Последнее обновление: 19 октября 2026 г.</em></p>
+
+  <h2>1. Назначение расширения</h2>
+
+  <p>
+    AlexChessPro предназначен для анализа шахматных позиций на Chess.com
+    и Lichess с помощью локального шахматного движка Stockfish.
+  </p>
+
+
+  <h2>2. Какие данные обрабатывает расширение</h2>
+
+  <p>
+    Для выполнения шахматного анализа AlexChessPro считывает текущую
+    шахматную позицию со страницы Chess.com или Lichess.
+  </p>
+
+  <p>
+    Шахматная позиция обрабатывается локально на компьютере пользователя
+    с помощью Stockfish и не передается на сервер лицензирования.
+  </p>
+
+  <p>
+    Для работы пробного периода и системы лицензирования расширение
+    создает случайный идентификатор устройства (device_id).
+  </p>
+
+  <p>
+    Этот идентификатор передается по защищенному HTTPS-соединению
+    на сервер лицензирования AlexChessPro:
+    <strong>api.homark.ru</strong>.
+  </p>
+
+
+  <h2>3. Активация лицензии</h2>
+
+  <p>
+    При активации полной версии на сервер лицензирования передаются:
+  </p>
+
   <ul>
-    <li>Extension settings (analysis depth, number of arrows, enabled/disabled state)</li>
-    <li>Activation status (whether a valid activation code has been entered)</li>
-    <li>An anonymous device identifier used solely to prevent reuse of activation codes on multiple devices</li>
+    <li>лицензионный код, введенный пользователем;</li>
+    <li>случайный идентификатор устройства (device_id).</li>
   </ul>
-  <p>This data never leaves your device and is not accessible to us.</p>
 
-  <h2>3. Activation Code Verification</h2>
-  <p>When you enter an activation code, it is sent to our database (Supabase) solely to verify its validity and mark it as used. No personal information is associated with this process — only the anonymous device identifier and the code itself.</p>
+  <p>
+    Эти данные используются исключительно для проверки лицензии,
+    определения статуса доступа и предотвращения повторного использования
+    одного лицензионного кода на разных устройствах.
+  </p>
 
-  <h2>4. Stockfish Engine</h2>
-  <p>On first use, the extension downloads the Stockfish chess engine from a public CDN (unpkg.com). This is a one-time download. No data about your chess games, moves, or positions is ever sent to any server — all analysis happens entirely within your browser.</p>
 
-  <h2>5. Third-Party Services</h2>
-  <p>The extension interacts with:</p>
+  <h2>4. Пробный период</h2>
+
+  <p>
+    AlexChessPro предоставляет пробный период.
+    Для его работы сервер может хранить дату начала пробного периода,
+    дату окончания и идентификатор устройства.
+  </p>
+
+
+  <h2>5. Локальное хранение данных</h2>
+
+  <p>
+    Расширение может хранить локально в Chrome:
+  </p>
+
   <ul>
-    <li><strong>lichess.org</strong> — to read the current board position and display move suggestions. No data is sent to lichess beyond normal page interaction.</li>
-    <li><strong>Supabase</strong> — for activation code verification only.</li>
-    <li><strong>unpkg.com</strong> — to download the Stockfish engine on first run.</li>
+    <li>настройки анализа;</li>
+    <li>выбранную глубину анализа;</li>
+    <li>количество отображаемых стрелок;</li>
+    <li>состояние включения расширения;</li>
+    <li>идентификатор устройства;</li>
+    <li>кэшированный статус пробного периода или лицензии.</li>
   </ul>
 
-  <h2>6. No Tracking</h2>
-  <p>We do not use analytics, tracking pixels, cookies, or any other tracking technologies.</p>
 
-  <h2>7. Changes to This Policy</h2>
-  <p>If we make changes to this privacy policy, we will update the date at the top of this page.</p>
+  <h2>6. Stockfish</h2>
 
-  <h2>8. Contact</h2>
-  <p>If you have any questions about this privacy policy, please contact us via Telegram.</p>
+  <p>
+    Шахматный движок Stockfish входит в состав расширения.
+    Он запускается локально в браузере пользователя.
+  </p>
+
+  <p>
+    Шахматные позиции, ходы и результаты анализа не отправляются
+    на сервер лицензирования.
+  </p>
+
+
+  <h2>7. Данные, которые AlexChessPro не собирает</h2>
+
+  <p>AlexChessPro не собирает:</p>
+
+  <ul>
+    <li>имя пользователя;</li>
+    <li>адрес электронной почты;</li>
+    <li>пароли Chess.com или Lichess;</li>
+    <li>платежные или банковские данные;</li>
+    <li>личные сообщения;</li>
+    <li>медицинские данные;</li>
+    <li>географическое местоположение;</li>
+    <li>историю поисковых запросов.</li>
+  </ul>
+
+
+  <h2>8. Сторонние сервисы</h2>
+
+  <p>Расширение взаимодействует со следующими сервисами:</p>
+
+  <ul>
+    <li>
+      <strong>Chess.com</strong> — для получения текущей шахматной позиции
+      и отображения элементов анализа на шахматной доске.
+    </li>
+
+    <li>
+      <strong>Lichess.org</strong> — для получения текущей шахматной позиции
+      и отображения элементов анализа на шахматной доске.
+    </li>
+
+    <li>
+      <strong>api.homark.ru</strong> — исключительно для проверки
+      пробного периода и лицензии AlexChessPro.
+    </li>
+  </ul>
+
+
+  <h2>9. Передача данных третьим лицам</h2>
+
+  <p>
+    AlexChessPro не продает пользовательские данные и не передает их
+    третьим лицам для рекламы, кредитования или иных целей,
+    не связанных с работой расширения.
+  </p>
+
+
+  <h2>10. Аналитика и отслеживание</h2>
+
+  <p>
+    AlexChessPro не использует рекламные трекеры, аналитические пиксели
+    или технологии отслеживания поведения пользователя для рекламы.
+  </p>
+
+
+  <h2>11. Безопасность</h2>
+
+  <p>
+    Обмен данными с сервером лицензирования выполняется через защищенное
+    HTTPS-соединение.
+  </p>
+
+
+  <h2>12. Изменения политики</h2>
+
+  <p>
+    При изменении настоящей политики дата последнего обновления будет
+    изменена в верхней части страницы.
+  </p>
+
+
+  <h2>13. Контакты</h2>
+
+  <p>
+    По вопросам, связанным с конфиденциальностью AlexChessPro,
+    пользователь может обратиться к разработчику через контактные данные,
+    указанные на странице расширения в Chrome Web Store.
+  </p>
+
 </body>
 </html>
